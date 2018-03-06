@@ -52,8 +52,18 @@ code {
   content:url("http://lorempixel.com/48/48");
 }
 .content {
-  margin-left: 60px;
+    font-size:30;
+     margin-left: 60px;
 }
 .content .by {
   font-weight: bold;
+}
+
+.tweeters {
+    color: rgb(107, 136, 170);
+    font-weight: bold;
+}
+
+.normalTweet {
+    color:rgb(173, 202, 230);
 }

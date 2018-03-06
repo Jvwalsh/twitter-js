@@ -14,8 +14,13 @@
     <div class="col-md-9">
     
       <!-- display tweets here -->
+
       {% for tweet in tweets %}
-        <li>{{tweet.content}}</li>
+        <li class='tweeters' >
+            <img src="https://pbs.twimg.com/profile_images/2450268678/olxp11gnt09no2y2wpsh_normal.jpeg">
+             {{tweet.name}}
+        </li>
+        <li class='normalTweet'>{{tweet.content}}</li>
       {% endfor %}
       
     </div>
