@@ -28,8 +28,9 @@ app.use(express.static('public'));
 const tweetBank = require('./tweetBank');
 
 router.get('/', function (req, res) {
-    let tweets = tweetBank.list();
-    res.render( 'index', { tweets: tweets } );
+    let everyTweet = tweetBank.list();
+    console.log('everyTweet', everyTweet)
+    res.render( 'index', { tweets: everyTweet } );
   });
 
 
@@ -39,6 +40,21 @@ router.get('/stylesheets/style.css', function (req, res) {
         err ? console.error(err) : console.log('processed')
     });
 });
+
+router.get('/users/:name', function(req, res){
+  var name = tweetBank.find({name: req.params.name});
+  res.render('index', {title: 'Twitter.js', tweets: name});
+  // console.log('hey look down there!')
+  // console.log('hey look here~!!', req.params.name)
+})
+
+router.get('/tweets/:id', function(req, res){
+  var singleTweet = tweetBank.find({id: req.params.id});
+  console.log(singleTweet, "check it out");
+  res.render('index', {title: 'Twitter.js', tweets: singleTweet});
+})
+
+
 
 nunjucks.configure('views', {
     noCache: true
