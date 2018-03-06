@@ -35,8 +35,5 @@ for (let i = 0; i < 10; i++) {
   module.exports.add( getFakeName(), getFakeTweet() );
 }
 
-module.exports.add('Andrew', 'tweet tweet');
 
 console.log('DATA', data);
-var found = module.exports.find({'name': 'Andrew'});
-console.log('FOUND', found);
